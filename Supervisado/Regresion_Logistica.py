@@ -12,7 +12,8 @@ dataset = load_iris()
 
 # Division de datos
 
-x_train, x_test, y_train, y_test = train_test_split(dataset.data, dataset.target)
+x_train, x_test, y_train, y_test = train_test_split(
+	dataset.data, dataset.target)
 
 # Modelo
 
@@ -26,7 +27,7 @@ clf.fit(x_train, y_train)
 
 y_pred = clf.predict(x_test)
 
-print(f"Prediccion: \n{y_pred}")
+print(f'Prediccion: \n{y_pred}')
 print(y_pred.shape)
 print(y_test.shape)
-print(f"\nMatriz de confusion: \n{confusion_matrix(y_pred, y_test)}")
+print(f'\nMatriz de confusion: \n{confusion_matrix(y_pred, y_test)}')

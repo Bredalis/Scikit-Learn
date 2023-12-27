@@ -15,8 +15,8 @@ df = make_blobs(
 
 puntos = df[0]
 
-print(f"Dataset: \n {df}")
-print(f"Puntos: \n {puntos}")
+print(f'Dataset: \n{df}')
+print(f'Puntos: \n{puntos}')
 
 # Modelo
 
@@ -29,27 +29,42 @@ modelo.fit(puntos)
 grupos = modelo.cluster_centers_
 y_km = modelo.fit_predict(puntos)
 
-print(f"Grupo: \n {grupos}")
-print(f"Etiquetas: \n {y_km}")
+print(f'Grupo: \n{grupos}')
+print(f'Etiquetas: \n{y_km}')
 
 # Grafica
 
-def Modelo():
+def modelo():
 
 	fig, axis = plt.subplots()
 
 	axis.scatter(df[0][:, 0], df[0][:, 1])
 	plt.show()
 
-Modelo()
+modelo()
 
-plt.scatter(puntos[y_km == 0, 0], puntos[y_km == 0, 1], s = 50, color = "green")
-plt.scatter(puntos[y_km == 1, 0], puntos[y_km == 1, 1], s = 50, color = "blue")
-plt.scatter(puntos[y_km == 2, 0], puntos[y_km == 2, 1], s = 50, color = "yellow")
-plt.scatter(puntos[y_km == 3, 0], puntos[y_km == 3, 1], s = 50, color = "red")
+plt.scatter(puntos[y_km == 0, 0], 
+	puntos[y_km == 0, 1], s = 50, color = 'green')
 
-plt.scatter(grupos[0][0], grupos[0][1], marker = "*", s = 200, color = "black")
-plt.scatter(grupos[1][0], grupos[1][1], marker = "*", s = 200, color = "black")
-plt.scatter(grupos[2][0], grupos[2][1], marker = "*", s = 200, color = "black")
-plt.scatter(grupos[3][0], grupos[3][1], marker = "*", s = 200, color = "black")
+plt.scatter(puntos[y_km == 1, 0], 
+	puntos[y_km == 1, 1], s = 50, color = 'blue')
+
+plt.scatter(puntos[y_km == 2, 0], 
+	puntos[y_km == 2, 1], s = 50, color = 'yellow')
+
+plt.scatter(puntos[y_km == 3, 0], 
+	puntos[y_km == 3, 1], s = 50, color = 'red')
+
+plt.scatter(grupos[0][0], 
+	grupos[0][1], marker = '*', s = 200, color = 'black')
+
+plt.scatter(grupos[1][0], 
+	grupos[1][1], marker = '*', s = 200, color = 'black')
+
+plt.scatter(grupos[2][0], 
+	grupos[2][1], marker = '*', s = 200, color = 'black')
+
+plt.scatter(grupos[3][0], 
+	grupos[3][1], marker = '*', s = 200, color = 'black')
+
 plt.show()

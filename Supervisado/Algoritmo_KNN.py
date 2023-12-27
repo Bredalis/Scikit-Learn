@@ -25,11 +25,11 @@ clf.fit(x_train, y_train)
 
 y_pred = clf.predict(x_test)
 
-print(f"y_pred: \n {y_pred}")
-print(f"Performance: {clf.score(x_test, y_test)}")
-print(f"Confusion Matrix: \n {confusion_matrix(y_pred, y_test)}")
+print(f'y_pred: \n {y_pred}')
+print(f'Performance: {clf.score(x_test, y_test)}')
+print(f'Confusion Matrix: \n {confusion_matrix(y_pred, y_test)}')
 
-# Plot
+# Grafica
 
 plt.scatter(x_train[:, 0], x_train[:, 1], c = y_train)
 plt.scatter(x_test[1, 1], x_test[1, 1], s = 100)

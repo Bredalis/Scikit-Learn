@@ -10,12 +10,12 @@ from sklearn.linear_model import LogisticRegression
 
 iris = datasets.load_iris()
 
-x = iris["data"][:, 3:]
-y = (iris["target"] == 2).astype(int)
+x = iris['data'][:, 3:]
+y = (iris['target'] == 2).astype(int)
 
 # Modelo
 
-clf = LogisticRegression(solver = "lbfgs", random_state = 42)
+clf = LogisticRegression(solver = 'lbfgs', random_state = 42)
 
 # Entrenamiento
 
@@ -32,19 +32,25 @@ frontera_de_decision = x_2[y_proba[:, 1] >= 0.5][0]
 
 plt.figure(figsize = (8, 3))
 
-plt.plot(x[y == 0], y[y == 0], "bs")
-plt.plot(x[y == 1], y[y == 1], "g^")
+plt.plot(x[y == 0], y[y == 0], 'bs')
+plt.plot(x[y == 1], y[y == 1], 'g^')
 
-plt.plot([frontera_de_decision, frontera_de_decision], [-1, 2], "k:", linewidth = 2)
-plt.plot(x_2, y_proba[:, 1], "g-", linewidth = 2, label = "iris virginica")
-plt.plot(x_2, y_proba[:, 0], "b--", linewidth = 2, label = "Not iris virginica")
+plt.plot(
+	[frontera_de_decision, frontera_de_decision],
+	[-1, 2], 'k:', linewidth = 2)
 
-plt.text(frontera_de_decision + 0.02, 0.15, "Decision  boundary", fontsize = 14, color = "k", ha = "center")
+plt.plot(x_2, y_proba[:, 1], 'g-', linewidth = 2, label = 'iris virginica')
+plt.plot(
+	x_2, y_proba[:, 0], 'b--', linewidth = 2, label = 'Not iris virginica')
 
-plt.xlabel("Petal width (cm)", fontsize = 14)
-plt.ylabel("Probability", fontsize = 14)
+plt.text(
+	frontera_de_decision + 0.02, 0.15, 'Decision  boundary', 
+	fontsize = 14, color = 'k', ha = 'center')
 
-plt.legend(loc = "center left", fontsize = 14)
+plt.xlabel('Petal width (cm)', fontsize = 14)
+plt.ylabel('Probability', fontsize = 14)
+
+plt.legend(loc = 'center left', fontsize = 14)
 plt.axis([0, 3, -0.02, 1.02])
 
 plt.show()

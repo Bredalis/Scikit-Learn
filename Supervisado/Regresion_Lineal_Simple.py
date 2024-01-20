@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 
 # Lectura de datos
 
-url = 'casas.csv'
+url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/casas.csv'
 df = pd.read_csv(url)
 print(f'DF: \n{df}')
 

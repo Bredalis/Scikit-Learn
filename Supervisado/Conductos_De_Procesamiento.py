@@ -12,7 +12,7 @@ from sklearn.metrics import mean_absolute_error
 
 # Lectura de datos
 
-url = 'C:/Users/angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/'
 df_train = pd.read_csv(url + 'california_housing_train.csv')
 df_test = pd.read_csv(url + 'california_housing_test.csv')
 

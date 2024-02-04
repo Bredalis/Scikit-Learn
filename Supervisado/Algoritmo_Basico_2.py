@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 # Lectura de datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/'
 data = pd.read_csv(url + 'housing.csv')
 
 # Division de datos

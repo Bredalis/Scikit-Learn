@@ -12,7 +12,7 @@ from sklearn.metrics import (confusion_matrix,
 
 # Lectura de datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/heart_Disease.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/heart_Disease.csv'
 df = pd.read_csv(url)
 
 print(f'DF: \n{df}')

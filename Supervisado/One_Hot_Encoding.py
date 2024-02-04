@@ -3,7 +3,7 @@ import pandas as pd
 
 # Lectura de datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/HRDataset_v14.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/HRDataset_v14.csv'
 df = pd.read_csv(url)
 print(f'DF: \n{df}')
 print(f'\nColumnas: \n{df.columns}')

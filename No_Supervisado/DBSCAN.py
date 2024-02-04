@@ -7,7 +7,7 @@ from sklearn.cluster import DBSCAN
 
 # Datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/casas.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/casas.csv'
 df = pd.read_csv(url)
 
 print(f'df: \n {df}')

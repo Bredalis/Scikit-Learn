@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 # Lectura de datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/Wine.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/Wine.csv'
 df = pd.read_csv(url)
 df = df.astype(float).fillna(0.0)
 

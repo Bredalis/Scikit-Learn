@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 # Lectura de datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/dataset.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/dataset.csv'
 datos = pd.read_csv(url)
 
 diabetes = datos[datos['diabetes'] == 0]

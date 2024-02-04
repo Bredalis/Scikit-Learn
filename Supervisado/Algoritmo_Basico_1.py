@@ -8,7 +8,7 @@ from sklearn import linear_model
 
 # Datos
 
-url = 'C:/Users/Angelica Gerrero/Desktop/LenguajesDeProgramacion/Datasets/CSV/country_stats.csv'
+url = 'C:/Users/Bradalis/Desktop/LenguajesDeProgramacion/Datasets/CSV/country_stats.csv'
 data = pd.read_csv(url, index_col = 'Country')
 
 x = np.c_[data['GDP_per_capita']]

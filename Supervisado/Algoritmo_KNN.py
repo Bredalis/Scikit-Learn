@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 x, y = make_classification(n_samples = 200)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y)
+X_train, X_test, y_train, y_test = train_test_split(x, y)
 
 # Modelo
 
@@ -19,20 +19,20 @@ clf = KNeighborsClassifier()
 
 # Entrenamiento
 
-clf.fit(x_train, y_train)
+clf.fit(X_train, y_train)
 
 # Prediccion
 
-y_pred = clf.predict(x_test)
+y_pred = clf.predict(X_test)
 
 print(f'y_pred: \n {y_pred}')
-print(f'Performance: {clf.score(x_test, y_test)}')
+print(f'Performance: {clf.score(X_test, y_test)}')
 print(f'Confusion Matrix: \n {confusion_matrix(y_pred, y_test)}')
 
 # Grafica
 
-plt.scatter(x_train[:, 0], x_train[:, 1], c = y_train)
-plt.scatter(x_test[1, 1], x_test[1, 1], s = 100)
+plt.scatter(X_train[:, 0], X_train[:, 1], c = y_train)
+plt.scatter(X_test[1, 1], X_test[1, 1], s = 100)
 plt.grid()
 
 plt.show()

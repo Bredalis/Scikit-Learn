@@ -8,14 +8,14 @@ from keras.datasets import boston_housing
 
 # Division de datos
 
-(x_train, y_train), (x_test, y_test) = boston_housing.load_data()
+(X_train, y_train), (X_test, y_test) = boston_housing.load_data()
 
 # Mostrar datos
 
-print(f'x train: \n{x_train}')
-print(f'\nx train cantidad: \n{x_train.shape}')
-print(f'\nx test: \n{x_test}')
-print(f'\nx test cantidad: \n{x_test.shape}')
+print(f'x train: \n{X_train}')
+print(f'\nx train cantidad: \n{X_train.shape}')
+print(f'\nx test: \n{X_test}')
+print(f'\nx test cantidad: \n{X_test.shape}')
 print(f'\ny train: \n{y_train}')
 print(f'\ny train cantidad: \n{y_train.shape}')
 print(f'\ny test: \n{y_test}')
@@ -27,11 +27,11 @@ clf = Ridge()
 
 # Entrenamiento
 
-clf.fit(x_train, y_train)
+clf.fit(X_train, y_train)
 
 # Prediccion
 
-y_pred = clf.predict(x_test)
+y_pred = clf.predict(X_test)
 print(f'\nPrediccion: \n{y_pred}')
 
 # Prediccion en df

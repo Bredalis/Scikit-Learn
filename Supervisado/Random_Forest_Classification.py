@@ -29,12 +29,12 @@ print(f'Y: \n{y}')
 print(f'X cantidad: \n{x.shape}')
 print(f'Y cantidad: \n{y.shape}')
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, random_state = 99)
+X_train, X_test, y_train, y_test = train_test_split(x, y, random_state = 99)
 
-print(f'X Train: \n{x_train}')
-print(f'X Train cantidad: \n{x_train.shape}')
-print(f'X Test: \n{x_test}')
-print(f'X Test cantidad: \n{x_test.shape}')
+print(f'X Train: \n{X_train}')
+print(f'X Train cantidad: \n{X_train.shape}')
+print(f'X Test: \n{X_test}')
+print(f'X Test cantidad: \n{X_test.shape}')
 
 print(f'Y Train: \n{y_train}')
 print(f'Y Train cantidad: \n{y_train.shape}')
@@ -50,9 +50,9 @@ clf = RandomForestClassifier(
 
 # Entrenamiento y prediccion
 
-clf.fit(x_train, y_train)
+clf.fit(X_train, y_train)
 
-y_pred = clf.predict(x_test)
+y_pred = clf.predict(X_test)
 print(f'Prediccion: \n {y_pred}')
 
 print(f'Columnas: \n{df.columns}')
@@ -65,7 +65,7 @@ print(f'Matriz de confucion: \n{confusion_matrix(y_pred, y_test)}')
 print(f'Exactitud: {accuracy_score(y_pred, y_test)}')
 print(f'Reporte: \n{classification_report(y_test, y_pred)}')
 print('Validacion cruzada: \n', 
-    cross_val_score(clf, x_train, y_train, cv = 10))
+    cross_val_score(clf, X_train, y_train, cv = 10))
 
 # Grafica
 

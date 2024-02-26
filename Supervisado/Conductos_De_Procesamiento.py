@@ -18,21 +18,21 @@ df_test = pd.read_csv(url + 'california_housing_test.csv')
 
 # Division de datos
 
-x_train, y_train = df_train.to_numpy()[:, :-1], df_train.to_numpy()[:, -1]
-x_test, y_test = df_test.to_numpy()[:, :-1], df_test.to_numpy()[:, -1]
+X_train, y_train = df_train.to_numpy()[:, :-1], df_train.to_numpy()[:, -1]
+X_test, y_test = df_test.to_numpy()[:, :-1], df_test.to_numpy()[:, -1]
 
 print(f'DF Train: \n {df_train.head()}')
 print(f'DF Test: \n {df_test.head()}')
 
-print(f'Cantidad de x train: {x_train.shape}')
+print(f'Cantidad de x train: {X_train.shape}')
 print(f'Cantidad de y train: {y_train.shape}')
-print(f'Cantidad de x test: {x_test.shape}')
+print(f'Cantidad de x test: {X_test.shape}')
 print(f'Cantidad de y test: {y_test.shape}')
 
 # Modelo y Entrenamiento
 
-std_scaler = StandardScaler().fit(x_train[:, :2])
-min_max_scaler = MinMaxScaler().fit(x_train[:, 2:])
+std_scaler = StandardScaler().fit(X_train[:, :2])
+min_max_scaler = MinMaxScaler().fit(X_train[:, 2:])
 
 def procesador(x):
 
@@ -60,20 +60,20 @@ p_3 = Pipeline([
 	('Random Forest', RFR(n_estimators = 10, max_depth = 7))
 ])
 
-def entrenamiento(modelo, x_train, y_train, x_test, y_test):
+def entrenamiento(modelo, X_train, y_train, X_test, y_test):
 
-	modelo.fit(x_train, y_train)
+	modelo.fit(X_train, y_train)
 
-	train_pred = modelo.predict(x_train)
-	test_pred = modelo.predict(x_test)
+	train_pred = modelo.predict(X_train)
+	test_pred = modelo.predict(X_test)
 
 	print('Training error: ' + str(mean_absolute_error(train_pred, y_train)))
 	print('Error de entrenamiento: ', 
 		mean_absolute_error(train_pred, y_train))
 
-entrenamiento(p_1, x_train, y_train, x_test, y_test)
+entrenamiento(p_1, X_train, y_train, X_test, y_test)
 
-print(procesador(x_test))
+print(procesador(X_test))
 print(transformacion_procesamiento)
 
 print(f'p1: {p_1}')

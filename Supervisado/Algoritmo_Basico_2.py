@@ -48,8 +48,8 @@ full_pipeline = ColumnTransformer([
     ('cat', OneHotEncoder(), cat_attributes)
 ])
 
-x_train = full_pipeline.fit_transform(train_data)
-x_test = full_pipeline.transform(test_data)
+X_train = full_pipeline.fit_transform(train_data)
+X_test = full_pipeline.transform(test_data)
 
 print(f'Data: \n{data.head()}')
 print(f'Info: \n{data.info()}')
@@ -57,8 +57,8 @@ print(f'Info: \n{data.info()}')
 print(f'Data Length: {len(data)}')
 print(f'Training Data Length: {len(train)}')
 print(f'Test Data Length: {len(test)}')
-print(f'Training Data: {x_train}')
-print(f'Test Data: {x_test}')
+print(f'Training Data: {X_train}')
+print(f'Test Data: {X_test}')
 
 # Modelos
 
@@ -67,32 +67,32 @@ model_2 = DecisionTreeRegressor()
 
 # Entrenamiento
 
-model.fit(x_train, y_train)
-model_2.fit(x_train, y_train)
+model.fit(X_train, y_train)
+model_2.fit(X_train, y_train)
 
 # Predicciones
 
-y_pred = model.predict(x_test)
-y_pred_2 = model_2.predict(x_test)
+y_pred = model.predict(X_test)
+y_pred_2 = model_2.predict(X_test)
 
 imputer = SimpleImputer(strategy = 'median')
 imputer.fit(train_numeric)
 
-x_train_numeric = imputer.transform(train_numeric)
+X_train_numeric = imputer.transform(train_numeric)
 
 scaler = StandardScaler()
-scaler.fit(x_train_numeric)
+scaler.fit(X_train_numeric)
 
-x_train_numeric_scaler = scaler.transform(x_train_numeric)
+X_train_numeric_scaler = scaler.transform(X_train_numeric)
 
 categorical = OneHotEncoder()
-x_train_categorical = categorical.fit_transform(train_categorical)
-x_train_categorical.toarray()
+X_train_categorical = categorical.fit_transform(train_categorical)
+X_train_categorical.toarray()
 
 print(f'Calculated values: {imputer.statistics_}')
-print(f'Median: {x_train_numeric}')
-print(f'Mean and statistics: {x_train_numeric_scaler}')
-print(x_train_categorical)
+print(f'Median: {X_train_numeric}')
+print(f'Mean and statistics: {X_train_numeric_scaler}')
+print(X_train_categorical)
 print(f'Model 1 Prediction: {y_pred}')
 print(np.sqrt(mean_squared_error(y_test, y_pred)))
 print(f'Model 2 Prediction: {y_pred_2}')

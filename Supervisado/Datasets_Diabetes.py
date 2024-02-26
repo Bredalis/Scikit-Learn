@@ -15,7 +15,7 @@ print(f'Dataset: \n{dataset}')
 
 # Division de datos
 
-x_train, x_test, y_train, y_test = train_test_split(
+X_train, X_test, y_train, y_test = train_test_split(
 	dataset.data, dataset.target)
 
 # Modelo
@@ -24,9 +24,9 @@ clf = KNeighborsClassifier()
 
 # Entrenamiento y prediccion
 
-clf.fit(x_train, y_train)
+clf.fit(X_train, y_train)
 
-y_pred = clf.predict(x_test)
+y_pred = clf.predict(X_test)
 print(f'Prediccion: \n{y_pred}')
 
 # Convertir las predicciones en un df

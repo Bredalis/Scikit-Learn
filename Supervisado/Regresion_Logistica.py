@@ -12,7 +12,7 @@ dataset = load_iris()
 
 # Division de datos
 
-x_train, x_test, y_train, y_test = train_test_split(
+X_train, X_test, y_train, y_test = train_test_split(
 	dataset.data, dataset.target)
 
 # Modelo
@@ -21,11 +21,11 @@ clf = LogisticRegression()
 
 # Entrenamiento
 
-clf.fit(x_train, y_train)
+clf.fit(X_train, y_train)
 
 # Prediccion
 
-y_pred = clf.predict(x_test)
+y_pred = clf.predict(X_test)
 
 print(f'Prediccion: \n{y_pred}')
 print(y_pred.shape)

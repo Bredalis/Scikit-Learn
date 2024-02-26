@@ -19,7 +19,7 @@ anemia = datos[datos['anaemia'] == 1]
 edades = pd.Series([40, 30, 20, 50])
 sexo = pd.Series([0, 1, 1, 0])
 
-x_train, x_test, y_train, y_test = train_test_split(
+X_train, X_test, y_train, y_test = train_test_split(
 	datos[['age', 'sex']], datos[['diabetes', 'anaemia']], test_size = 0.30
 )
 
@@ -38,9 +38,9 @@ clf = tree.DecisionTreeClassifier(criterion = 'entropy', max_depth = 2)
 
 # Entrenamiento
 
-clf.fit(x_train, y_train)
+clf.fit(X_train, y_train)
 
-print(f'Rendimiento: {clf.score(x_test, y_test)}')
+print(f'Rendimiento: {clf.score(X_test, y_test)}')
 print('Arbol: \n', tree.export_text(clf, feature_names = ['age', 'sex']))
 print(f'Predicccion: {clf.predict([[70, 1]])}')
    
